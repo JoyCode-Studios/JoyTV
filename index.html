@@ -74,70 +74,7 @@
     </div>
   </div>
 
-<script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-app.js";
-  import {
-    getAuth,
-    signInWithEmailAndPassword,
-    signInWithPopup,
-    GoogleAuthProvider,
-    GithubAuthProvider,
-    onAuthStateChanged
-  } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-auth.js";
-
-  const firebaseConfig = {
-    apiKey: "AIzaSyBk_k17IxDi2AJmDmN-iHzTV7CSOQO_VZo",
-    authDomain: "joycode-studios.firebaseapp.com",
-    projectId: "joycode-studios",
-    storageBucket: "joycode-studios.firebasestorage.app",
-    messagingSenderId: "633743383003",
-    appId: "1:633743383003:web:155a68ae785d38c2096ffe"
-  };
-
-  const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app);
-
-  // 🔐 Redirect if already logged in
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      window.location.href = "home.html";
-    }
-  });
-
-  window.login = function () {
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-
-    signInWithEmailAndPassword(auth, email, password)
-      .then(() => {
-        window.location.href = "home.html";
-      })
-      .catch((error) => {
-        alert("Login failed: " + error.message);
-      });
-  };
-
-  window.continueWithGoogle = function () {
-    const provider = new GoogleAuthProvider();
-    signInWithPopup(auth, provider)
-      .then(() => {
-        window.location.href = "home.html";
-      })
-      .catch((error) => {
-        alert("Google sign-in failed: " + error.message);
-      });
-  };
-
-  window.continueWithGitHub = function () {
-    const provider = new GithubAuthProvider();
-    signInWithPopup(auth, provider)
-      .then(() => {
-        window.location.href = "home.html";
-      })
-      .catch((error) => {
-        alert("GitHub sign-in failed: " + error.message);
-      });
-  };
+<script type="module" src="https://cdn.joycode.co.uk/joytv-login.js">
 </script>
 </body>
 </html>
