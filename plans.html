@@ -82,28 +82,6 @@
   <div class="footer-note">
     JoyTV is a free service.
 
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-app.js";
-    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-auth.js";
-
-    const firebaseConfig = {
-      apiKey: "AIzaSyBk_k17IxDi2AJmDmN-iHzTV7CSOQO_VZo",
-      authDomain: "joycode-studios.firebaseapp.com",
-      projectId: "joycode-studios",
-      storageBucket: "joycode-studios.firebasestorage.app",
-      messagingSenderId: "633743383003",
-      appId: "1:633743383003:web:155a68ae785d38c2096ffe"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-
-    onAuthStateChanged(auth, (user) => {
-      if (!user) {
-        window.location.href = "index.html";
-      }
-    });
-  </script>
-
+  <script type="module" src="https://cdn.joycode.co.uk/joytv-firebase.js> 
 </body>
 </html>
